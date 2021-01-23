@@ -1,0 +1,57 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.collectionSection {
+  text-align: center;
+}
+.collectionPageHeading {
+  margin: 1em 0;
+}
+.collectionPage {
+  margin: 1em;
+  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 0.4fr 1fr;
+  grid-template-rows: 1fr 1.3fr 1fr;
+  /* grid-template-areas:
+    "first-collection second-collection second-collection"
+    "main-collection main-collection main-collection"
+    "third-collection third-collection fourth-collection"; */
+  /* justify-items: center; */
+  /* align-content: center; */
+}
+
+.collectionWrapper {
+}
+
+/* .collectionWrapper:first-child {
+  grid-column: 1/2;
+  margin-right: 30em;
+  color: green;
+} */
+.collectionWrapper:last-child {
+  grid-column: 2/4;
+}
+.collectionPage a {
+  text-decoration: none;
+}
+
+.collectionItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  min-height: 30em;
+  width: 100%;
+}
+#firstCollection {
+  grid-column: 1/3;
+}
+#mainCollection {
+  grid-column: 1/4;
+  grid-row: 2/3;
+}

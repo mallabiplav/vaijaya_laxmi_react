@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
+import "./css/index.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import FooterSection from "./footer/footerSection";
+import CollectionsPage from "./pages/Collection Page/collectionsPage";
+import IndividualCollection from "./pages/individual-collection-page/individual-collection";
+import HomePage from "./pages/Home Page/home-page";
+import NavigationBar from "./navigation_bar/navigationBar";
+import JourneyPage from "./pages/Journey Page/journey-page";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+  return (
+    <Router>
+      <NavigationBar />
+      <Route exact path="/">
+        <HomePage />
+      </Route>
+      <Route exact path="/products/rugs">
+        <CollectionsPage />
+      </Route>
+      <Route path="/journey">
+        <JourneyPage />
+      </Route>
+      <Route
+        path="/products/rugs/:collectionName"
+        children={<IndividualCollection />}
+      ></Route>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <FooterSection />
+    </Router>
+  );
+}
+
+ReactDom.render(<App />, document.getElementById("root"));
