@@ -6,6 +6,7 @@ const CollectionSection = () => {
   return (
     <section className="collections">
       {collectionArray.map((collection, i) => {
+        console.log(i);
         return <Collection key={i} collection={collection} />;
       })}
     </section>

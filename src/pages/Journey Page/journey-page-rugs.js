@@ -3,12 +3,14 @@ import cording from "../../images/journey-images/Picture1.jpg";
 import balling from "../../images/journey-images/journey-balling.JPG";
 import dyeing from "../../images/journey-images/journey-dyeing.jpg";
 import weaving from "../../images/journey-images/journey-weaving.JPG";
+import mainImage from "../../images/journey-images/journey-main-image.JPG";
 
 const JourneyPageRugs = () => {
   return (
     <div className="journey-rugs-container">
       <div className="journey-rug-container-main">
         <h2 className="journey-rugs-heading">The Journey of your rug</h2>
+        <img className="journey-main-image" src={mainImage} />
         <p className="journey-rugs-main-paragraph">
           The journey of your rug begins with the selection of finest materials.
           From raw tibetan wool to banana silk, we source our materials with
@@ -17,8 +19,23 @@ const JourneyPageRugs = () => {
           existed for hundreds of years.
         </p>
       </div>
-      <div className="journey-rug-container carding-spinning-container">
-        <img src={cording} />
+      <div
+        className="journey-rug-container carding-spinning-container"
+        style={{
+          backgroundImage: `url(${cording})`,
+          height: "35em",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          filter: "grayscale(100%)",
+          backgroundPosition: "cover",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        {/* <img src={cording} /> */}
         <h3 className="journey-rug-heading carding-spinning-heading">
           Carding and Spinning
         </h3>
@@ -47,7 +64,7 @@ const JourneyPageRugs = () => {
         </p>
       </div>
       <div className="journey-rug-container balling-container">
-        <img src={balling} />
+        {/* <img src={balling} /> */}
 
         <h3 className="journey-rug-heading balling-heading">Balling</h3>
         <p className="journey-rug-paragraph balling-paragaraph">

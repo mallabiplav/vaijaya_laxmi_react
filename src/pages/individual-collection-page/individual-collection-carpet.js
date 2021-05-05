@@ -1,7 +1,9 @@
 import React from "react";
 
 const IndividualCollectionCarpet = (props) => {
-  const { rugName, rugImage } = props.rug;
+  const { title, description, size, material, imageUrl } = props.rug;
+  const collectionName = props.collectionName;
+
   const { setShowItem } = props;
   // console.log(showItem, "ASASDASD");
 
@@ -21,8 +23,9 @@ const IndividualCollectionCarpet = (props) => {
           <div
             className="individual-collection-main-picture"
             style={{
-              background: `linear-gradient(0deg,rgba(10, 10, 10, 0.35), rgba(10, 10, 10, 0.35)), url(${rugImage})`,
-              backgroundSize: "cover",
+              backgroundImage: `url(${imageUrl})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
             }}
           ></div>
           {/* <div className="individual-collection-secondary-pictures">
@@ -35,18 +38,13 @@ const IndividualCollectionCarpet = (props) => {
           </div> */}
         </div>
         <div className="individual-carpet-info-right-col">
-          <h3 className="individual-collection-name">Founders' Collection</h3>
-          <h4 className="individual-carpet-name">{rugName}</h4>
-          <p className="individual-carpet-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla sit
-            laborum voluptatibus similique sint autem ex beatae totam,
-            blanditiis, perferendis cupiditate! Nesciunt quas non error magnam
-            dolore quos, amet quam?
-          </p>
-          <p className="individual-carpet-material">
-            Material: 90% Wool - 10% Cotton
-          </p>
-          <p className="individual-carpet-size">Size: 8X10</p>
+          <h3 className="individual-collection-name">
+            {collectionName} Collection
+          </h3>
+          <h4 className="individual-carpet-name">{title}</h4>
+          {/* <p className="individual-carpet-description">{description}</p> */}
+          <p className="individual-carpet-material">Material: {material}</p>
+          <p className="individual-carpet-size">Size: {size}</p>
           <button className="individual-carpet-get-quote-button">
             Get Quote
           </button>

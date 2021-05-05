@@ -17,10 +17,4 @@ export const collectionArray = [
     buttonLabel: comingSoon,
     collectionType: "Ceramics",
   },
-  {
-    image: pangden,
-    heading: "Pangden",
-    buttonLabel: comingSoon,
-    collectionType: "Misc",
-  },
 ];
