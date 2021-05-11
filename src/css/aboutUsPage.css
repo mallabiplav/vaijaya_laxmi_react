@@ -1,7 +1,17 @@
 .about-us-page {
   /* margin-top: 5em; */
+  /* margin: 10em 0; */
   /* padding: 10% 10%; */
+  padding: 10% 10%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-us-main-image {
+  width: 100%;
+  max-height: 30em;
+  object-fit: cover;
 }
 
 section {
@@ -9,5 +19,199 @@ section {
 }
 
 .about-us-heading {
-  margin-bottom: 1em;
+  /* margin-top: 2em; */
+  /* margin-bottom: 1em; */
+}
+.about-us-subheading {
+  position: relative;
+  color: rgb(53, 53, 53);
+}
+.about-us-subheading::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 0em;
+  border-top: 2px dotted rgb(168, 163, 163);
+  z-index: -1;
+}
+
+.about-us-paragraph {
+  max-width: 50em;
+  line-height: 35px;
+  margin: 0 0 0 0;
+}
+
+/* .values-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.value {
+  background-color: rgb(247, 247, 247);
+  padding: 3em;
+  border-radius: 5px;
+  -webkit-box-shadow: -2px 7px 21px 2px rgba(138, 138, 138, 0.61);
+  box-shadow: -2px 7px 21px 2px rgba(230, 230, 230, 0.822);
+}
+
+.value:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+}
+.value:last-child {
+  grid-column: 1/3;
+  max-width: 50%;
+  justify-self: center;
+} */
+
+.our-founders-section {
+  /* background-color: red; */
+  color: white;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15%;
+  margin-right: -15%;
+  width: calc(100% + 25%);
+  padding: 5em 0 6em 0;
+  background: linear-gradient(180deg, #486269 0%, #1a1f22 36.77%);
+}
+.our-founders-introduction {
+  max-width: 50em;
+}
+.our-founders-introduction p {
+  letter-spacing: 0.15em;
+}
+.founders-image-container {
+  /* overflow: hidden; */
+  /* position: relative; */
+  /* max-height: 20em; */
+  /* min-width: 100%; */
+  /* display: flex; */
+  /* margin-left: calc(-100%); */
+  /* margin-right: calc(-100%); */
+  /* justify-content: center; */
+  /* align-items: center; */
+
+  /* margin-left: -25%; */
+  /* margin-right: -25%; */
+}
+.about-us-founders-image {
+  /* position: absolute; */
+  max-height: 35em;
+  margin: 1em 0;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+
+  /* padding-left: -10%;
+  padding-right: -10%; */
+  /* top: 0; */
+  /* left: 0;
+  right: 0; */
+  /* padding: 0; */
+  /* margin-left: -100%; */
+  /* margin-right: -100%; */
+  /* max-height: 30em; */
+}
+
+.founders-info-container {
+  display: flex;
+  outline-offset: 10px;
+  outline: 1px solid rgb(216, 219, 188);
+  width: 70%;
+  margin-top: 2em;
+  /* margin-left: 25%; */
+}
+.founders-paragaraph {
+  background-color: #f1f1e6;
+  color: rgb(24, 21, 21);
+  max-width: 55em;
+  padding: 0em 5em;
+  display: flex;
+  align-items: center;
+}
+
+blockquote {
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  /* border: 0.5px solid rgb(219, 219, 219); */
+  padding: 3em 4em;
+}
+.quote-container {
+  background-color: #486269;
+  border-radius: 2px;
+  /* margin: 0 -10%; */
+  /* width: calc(100% + 20%); */
+  /* border: 1px solid black; */
+}
+.quotation {
+  font-size: 2rem;
+  max-width: 20em;
+  color: rgb(255, 255, 255);
+  quotes: "\201C""\201D""\2018""\2019";
+  position: relative;
+  font-weight: 400;
+}
+
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: rgb(0, 0, 0);
+  font-size: 3em;
+}
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  /* left: 20px; */
+  position: absolute;
+  bottom: -0.2em;
+  right: 0em;
+  color: rgb(0, 0, 0);
+  font-size: 3em;
+}
+.our-projects-section {
+  background-color: rgb(24, 15, 4);
+}
+.our-projects {
+  margin-top: 5em;
+  border: 2px solid rgb(219, 219, 219);
+  padding: 5em 4em;
+  /* background-color: rgb(243, 245, 220); */
+
+  /* background-color: rgb(255, 246, 234); */
+}
+.image-container {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 3em;
+  margin: 3em 0;
+}
+
+#sarlahi-rug-image,
+#thimi-ceramics-image {
+  max-width: 40em;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
 }
