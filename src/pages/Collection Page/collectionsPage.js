@@ -3,7 +3,6 @@ import { collectionArray } from "./collectionArray";
 import CollectionItem from "./collectionItems";
 import "../../css/collectionPage.css";
 import "../../css/loading.css";
-import FooterSection from "../../footer/footerSection";
 import sanityClient from "../../client.js";
 
 const CollectionsPage = () => {

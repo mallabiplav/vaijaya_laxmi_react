@@ -1,5 +1,4 @@
 import React from "react";
-import FooterSection from "../../footer/footerSection";
 import IndividualCollectionItem from "./individual-collection-item";
 
 const IndividualCollectionItems = (props) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
-import H3 from "../components/text-components/h3-component";
-import ParagraphComponent from "../components/text-components/paragraph-component";
+import H3 from "../text-components/h3-component";
+import ParagraphComponent from "../text-components/paragraph-component";
 import "./footer.css";
 
 const FooterSection = () => {
