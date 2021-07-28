@@ -1,7 +1,8 @@
 import React from "react";
+import H1 from "../../components/text-components/h1-component";
 
-const AboutUsHeading = (props) => {
-  return <h1 className="about-us-heading">{props.heading}</h1>;
+const AboutUsHeading = () => {
+  return <H1 text="About Us" />;
 };
 
 export default AboutUsHeading;

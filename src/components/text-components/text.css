@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500&family=Josefin+Sans:wght@300;400&family=Lora:wght@400;500&family=Prata&display=swap");
+:root {
+  --landing-page-font: "Cinzel", serif;
+  --primary-font: "Josefin Sans", sans-serif;
+  --alternate-font: "Prata", sans-serif;
+  /* --secondary-font: coral; */
+  --content-font: "Lora", serif;
+
+  --blog-line-width: 0em;
+}
+
+.heading-1 {
+  font-family: var(--alternate-font);
+  font-size: clamp(2rem, 3vw, 4rem);
+}
+.heading-2 {
+  font-family: var(--content-font);
+  font-size: clamp(1.8rem, 2.5vw, 3.5rem);
+  /* letter-spacing: 0.3em; */
+}
+.heading-3 {
+  font-family: var(--alternate-font);
+  font-size: clamp(1.5rem, 1.8vw, 3.5rem);
+}
+.heading-4 {
+  font-family: var(--alternate-font);
+  font-size: clamp(1.3rem, 1.5vw, 3.5rem);
+}
+.heading-5 {
+  font-family: var(--primary-font);
+  font-size: 1.3rem;
+}
+
+.paragraph-component {
+  font-family: var(--primary-font);
+  /* color: #ccbebe; */
+  font-size: clamp(1.2rem, 1.4vw, 2rem);
+  line-height: 1.7rem;
+}

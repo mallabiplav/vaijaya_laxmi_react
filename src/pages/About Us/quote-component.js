@@ -1,9 +1,10 @@
 import React from "react";
+import H3 from "../../components/text-components/h3-component";
 
-const QuoteComponent = (props) => {
+const QuoteComponent = ({ text }) => {
   return (
     <blockquote>
-      <p className="quotation">{props.quote}</p>
+      <H3 className="quotation" text={text} />
     </blockquote>
   );
 };

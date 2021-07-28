@@ -1,20 +1,19 @@
-import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { React, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../images/vijayaLaxmiLogoBlack.png";
-import ".././css/navigationBar.css";
+import "./navigationBar.css";
 
 const NavigationBar = () => {
   const [showHamburgerNav, setShowHamburgerNav] = useState(false);
   const [hamburgerNavOpen, sethamburgerNavOpen] = useState(false);
-
-  window.onscroll = function () {
-    scrollFunction();
-  };
+  const location = useLocation();
+  console.log(location.pathname === "/journey");
 
   const scrollFunction = () => {
     if (
       document.body.scrollTop > 300 ||
       document.documentElement.scrollTop > 300
+      // location.pathname !== "/journey"
     ) {
       setTimeout(3000);
       setShowHamburgerNav(true);
@@ -47,7 +46,9 @@ const NavigationBar = () => {
         }
       >
         {/* <div className="hamburger-menu">XXX</div> */}
-        <img src={logo} className="logo-image" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="logo-image" alt="logo" />
+        </Link>
         {/* {hamburgerNavOpen && (
           <h5 className="nav-bottom-heading" style={{ color: "#636363" }}>
             Vijaya Laxmi

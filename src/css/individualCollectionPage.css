@@ -1,16 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap");
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 .individualCollectionSection {
-  margin-top: 10%;
+  margin-top: 7%;
+  /* margin-left: 10em; */
   margin-bottom: 2em;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.individualCollectionMain {
+  /* margin-left: 10em; */
+  /* border: thin dotted black; */
 }
 .individual-collection-header {
   height: 90vh;
@@ -41,16 +48,19 @@
   max-width: 70em;
   /* background-color: chartreuse; */
 }
+.individual-collection-description h2 {
+  margin-bottom: 0.5em;
+}
 
 .individualCollectionItems {
   margin: 1em;
   margin-bottom: 1em;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   min-width: 70%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 3em;
+  gap: 1em;
   background-color: white;
 }
 .individualCollectionItem {
@@ -68,7 +78,8 @@
   background-position: center;
 
   /* width: max-content; */
-  min-width: 25em;
+  min-width: 20em;
+  margin-bottom: 2em;
   flex-basis: 25%;
 }
 .individualCollectionRugName {
@@ -109,7 +120,7 @@
   position: relative;
 
   /* width: clamp(50%, 90px, 60%); */
-  min-width: 60%;
+  max-width: 70em;
   /* max-width: 75em; */
   background-color: rgb(240, 240, 240);
   padding: 3.5em 5em;
@@ -123,8 +134,8 @@
 .individual-carpet-info-left-col {
   /* min-width: 300px; */
   /* max-width: 350px; */
-  flex: 50%;
-  margin-right: 3em;
+  flex: 30%;
+  margin-right: 0em;
 }
 .individual-collection-main-picture {
   /* flex-basis: 20em; */

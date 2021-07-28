@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import journeyImage from "../images/journey.png";
+import journeyImage from "../../images/journey.png";
+import H2 from "../../components/text-components/h2-component";
+import Paragraph from "../../components/text-components/paragraph-component";
+
 // import "./css/index.css";
 
 const JourneySection = () => {
@@ -9,7 +12,7 @@ const JourneySection = () => {
       <div className="journey-header-container">
         <img src={journeyImage} className="journey-image" />
         <div className="journey-header">
-          <h1>The Journey Of Artisnal Crafts</h1>
+          <H2 text="The Journey Of Artisnal Crafts" />
         </div>
       </div>
       <div className="journey-content">
@@ -19,9 +22,10 @@ const JourneySection = () => {
           the journey of a rug from inception to completion.
         </h5>
         <Link to={`/journey`}>
-          <p className="journey-content-follow-journey fade-in">
-            Follow the journey here
-          </p>
+          <Paragraph
+            className="journey-content-follow-journey fade-in"
+            paragraph="Follow the journey here"
+          />
         </Link>
       </div>
     </section>

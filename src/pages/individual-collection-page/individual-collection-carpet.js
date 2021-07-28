@@ -1,5 +1,7 @@
 import React from "react";
-
+import ParagraphComponent from "../../components/text-components/paragraph-component";
+import H3 from "../../components/text-components/h3-component";
+import H4 from "../../components/text-components/h4-component";
 const IndividualCollectionCarpet = (props) => {
   const { title, description, size, material, imageUrl } = props.rug;
   const collectionName = props.collectionName;
@@ -38,13 +40,23 @@ const IndividualCollectionCarpet = (props) => {
           </div> */}
         </div>
         <div className="individual-carpet-info-right-col">
-          <h3 className="individual-collection-name">
-            {collectionName} Collection
-          </h3>
-          <h4 className="individual-carpet-name">{title}</h4>
-          {/* <p className="individual-carpet-description">{description}</p> */}
-          <p className="individual-carpet-material">Material: {material}</p>
-          <p className="individual-carpet-size">Size: {size}</p>
+          <H3
+            className="individual-collection-name"
+            text={`${collectionName} Collection`}
+          />
+          <H4 className="individual-carpet-name" text={title} />
+          <ParagraphComponent
+            className="individual-carpet-description"
+            paragraph={description}
+          />
+          <ParagraphComponent
+            className="individual-carpet-material"
+            paragraph={`Material: ${material}`}
+          />
+          <ParagraphComponent
+            className="individual-carpet-size"
+            paragraph={`Size: ${size}`}
+          />
           <button className="individual-carpet-get-quote-button">
             Get Quote
           </button>

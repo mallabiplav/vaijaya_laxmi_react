@@ -1,5 +1,6 @@
 import React from "react";
-
+import H3 from "../../../components/text-components/h3-component";
+import ParagraphComponent from "../../../components/text-components/paragraph-component";
 const Blog = (props) => {
   const { image, heading, subHeading } = props.blog;
 
@@ -11,10 +12,12 @@ const Blog = (props) => {
         backgroundSize: "cover",
       }}
     >
-      <h3 className="blog-item-heading">{heading}</h3>
-      <h4 className="blog-item-subheading" data-delay="1s">
-        {subHeading}
-      </h4>
+      <H3 className="blog-item-heading" text={heading} />
+      <ParagraphComponent
+        className="blog-item-subheading"
+        data-delay="1s"
+        paragraph={subHeading}
+      />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import rugEssentials from "../images/rug-essentials.jpg";
-import designGuide from "../images/design-guide.jpg";
+import rugEssentials from "../../../images/rug-essentials.jpg";
+import designGuide from "../../../images/design-guide.jpg";
 
 export const blogArray = [
   {

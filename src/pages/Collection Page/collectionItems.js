@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import H3 from "../../components/text-components/h3-component";
 
 const CollectionItems = (props) => {
   const { collectionName, rugList } = props.collection;
@@ -12,7 +13,7 @@ const CollectionItems = (props) => {
         backgroundSize: "cover",
       }}
     >
-      <h2>{collectionName}</h2>
+      <H3 text={collectionName} />
     </Link>
   );
 };

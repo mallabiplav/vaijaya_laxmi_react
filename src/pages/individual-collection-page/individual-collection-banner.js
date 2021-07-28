@@ -1,4 +1,6 @@
 import React from "react";
+import H3 from "../../components/text-components/h3-component";
+import ParagraphComponent from "../../components/text-components/paragraph-component";
 
 const IndividualCollectiionBanner = (props) => {
   const collectionName = props.collectionInformation;
@@ -15,16 +17,16 @@ const IndividualCollectiionBanner = (props) => {
           backgroundSize: "cover",
         }}
       >
-        <h2>{collectionName} Collection</h2>
+        <H3 text={`${collectionName} Collection`} />
       </div>
       <div className="individual-collection-description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla sit
+        <ParagraphComponent
+          paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla sit
           laborum voluptatibus similique sint autem ex beatae totam, blanditiis,
           perferendis cupiditate! Nesciunt quas non error magnam dolore quos,
           amet quam? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          NuNesciunt quas non error magnam dolore quos, amet quam?
-        </p>
+          NuNesciunt quas non error magnam dolore quos, amet quam?"
+        />
       </div>
     </div>
   );

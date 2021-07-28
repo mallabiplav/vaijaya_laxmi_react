@@ -5,72 +5,58 @@ import AboutUsHeading from "./about-us-heading-component";
 import AboutUsSubheading from "./about-us-sub-heading-component";
 import Value from "./values-component";
 import "../../css/aboutUsPage.css";
-import ParagraphComponent from "./paragraph-component";
+import ParagraphComponent from "../../components/text-components/paragraph-component";
+import H1 from "../../components/text-components/h1-component";
+import H2 from "../../components/text-components/h2-component";
+import H3 from "../../components/text-components/h3-component";
 import QuoteComponent from "./quote-component";
 
 const AboutUsPage = () => {
   return (
     <div className="about-us-page">
-      <AboutUsHeading heading="About Us" />
-      <img className="about-us-main-image" src={image} />
-      <ParagraphComponent
-        paragraph="Vijaya Laxmi is an organization that started with a simple thought of
-        providing good products with good values. Producing quality highland
-        crafts like hand-knotted rugs, ceramics, dhurries, dhaka fabrics,
-        pashmina and so on. We are based in Kathmandu, the foothills of the
-        majestic Himalayas working with a network of artisans throughout Nepal.
-        With the blend of ancient hinduism and tibetan buddhism culminating into
-        the culture now revered for our ancient arts and craft. Vijaya Laxmi
-        Organization aims to bring light to these artisanal crafts and
-        craftsmanship with a modern approach.
-      
-       "
-      />
-      <ParagraphComponent
-        paragraph="We believe in balancing our business priorities with a strong sense of
-        social responsibilities. We aim to promote and support local artisans
-        and their crafts ethically, paving the way for centuries old techniques
-        to be accessible to the world in an authentic way. Using the finest
-        quality raw materials that go through the wonderful journey of turning
-        into your product."
-      />
-      <ParagraphComponent
-        paragraph="Our goal is to provide you with timeless pieces that complete
-        your spaces.."
-      />
-
-      {/* <section className="our-values-section">
-        <AboutUsHeading heading="Our Values" />
-        <div className="values-container">
-          <Value
-            valueHeading="Integrity:"
-            valueParagraph="Ethics and honesty is one of our foundational values. We truly believe in providing good products with good values (Ethically sourced, quality controlled, fairtrade and sustainable)."
-          />
-          <Value
-            valueHeading="Innovation:"
-            valueParagraph="Working with traditional techniques does not mean we limit ourselves. At Vijaya Laxmi there is no box! We believe in constant growth."
-          />
-          <Value
-            valueHeading="Functionality:"
-            valueParagraph="Along with aesthetics, our products are designed to be practical, easy to use and timeless."
-          />
-          <Value
-            valueHeading="Women empowerment:"
-            valueParagraph="There is a huge gender gap in Nepal as most women are involved in unpaid household labour. Recognising the lack of formal employment and the need for alternative livelihood opportunities, one of the core values of VLO is to empower women through direct job opportunities, welfare plans and educational development programs."
-          />
-          <Value
-            valueHeading="Collaboration:"
-            valueParagraph="Our designs are made by working alongside local artisans and budding artists. We want to build a platform where they can showcase their talents and stories."
-          />
+      <div className="about-us-main">
+        <H1 text="About Us" />
+        <div className="about-us-image-container">
+          <img className="about-us-main-image" src={image} />
         </div>
-      </section> */}
+        <div className="about-us-paragraph-container">
+          <ParagraphComponent
+            className="about-us-paragraph"
+            paragraph="Vijaya Laxmi is an organization that started with a simple thought of
+          providing good products with good values. Producing quality highland
+          crafts like hand-knotted rugs, ceramics, dhurries, dhaka fabrics,
+          pashmina and so on. We are based in Kathmandu, the foothills of the
+          majestic Himalayas working with a network of artisans throughout Nepal.
+          With the blend of ancient hinduism and tibetan buddhism culminating into
+          the culture now revered for our ancient arts and craft. Vijaya Laxmi
+          Organization aims to bring light to these artisanal crafts and
+          craftsmanship with a modern approach.
+          
+          "
+          />
+          <ParagraphComponent
+            className="about-us-paragraph"
+            paragraph="We believe in balancing our business priorities with a strong sense of
+          social responsibilities. We aim to promote and support local artisans
+          and their crafts ethically, paving the way for centuries old techniques
+          to be accessible to the world in an authentic way. Using the finest
+          quality raw materials that go through the wonderful journey of turning
+          into your product."
+          />
+          {/* <ParagraphComponent
+            paragraph="Our goal is to provide you with timeless pieces that complete
+          your spaces.."
+          /> */}
+        </div>
+      </div>
+
       <section className="our-founders-section">
         <div className="our-founders-introduction">
-          <AboutUsHeading heading="Our Founders" />
+          <H2 text="Our Founders" />
           <ParagraphComponent
             paragraph="Vijaya Laxmi Organization is led by its co-founders Rachana Shrestha,
-          Adhishree Shrestha and Tsering Kenji Sherpa, who formed the company in
-          2020."
+            Adhishree Shrestha and Tsering Kenji Sherpa, who formed the company in
+            2020."
           />
         </div>
         <div className="founders-image-container">
@@ -83,7 +69,7 @@ const AboutUsPage = () => {
         <div className="founders-info-container">
           <div className="quote-container">
             <QuoteComponent
-              quote="We are a young team that isn’t afraid to think big and blur the
+              text="We are a young team that isn’t afraid to think big and blur the
             lines between modernity and tradition."
             />
           </div>
@@ -102,17 +88,14 @@ const AboutUsPage = () => {
         </div>
       </section>
       <section className="our-projects">
-        <AboutUsHeading heading="Our Projects" />
+        <H2 text="Our Projects" />
         <div className="sarlahi-rug-container">
-          <AboutUsSubheading
-            align="left-align"
-            subHeading="Sarlahi Rug Project"
-          />
-
+          <H3 text="Sarlahi Rug Project" className="right-align" />
           <div className="image-container">
-            <div className="sarlahi-paragraph">
+            <div className="sarlahi-paragraph-container">
               <ParagraphComponent
                 align="left-align"
+                className="sarlahi-paragraph"
                 paragraph="Sarlahi district, located in Eastern region of Nepal, has
             traditionally been an important place of origin for Nepal’s weaving
             community. The Sarlahi Artisan Village is a project in collaboration
@@ -122,6 +105,7 @@ const AboutUsPage = () => {
             fair trade standard working conditions.."
               />
               <ParagraphComponent
+                className="sarlahi-paragraph"
                 align="left-align"
                 paragraph=" Vijaya Laxmi is proud to be a consortium partner not only because
               of the fair trade standards but also for the strong gender
@@ -129,18 +113,20 @@ const AboutUsPage = () => {
               project."
               />
             </div>
-            <img src={image} alt="" id="sarlahi-rug-image" />
+            <img src={image} alt="sarlahi rug image" id="sarlahi-rug-image" />
           </div>
         </div>
         <div className="thimi-ceramics-container">
-          <AboutUsSubheading
-            align="right-align"
-            subHeading="Thimi Ceramic Project"
-          />
+          <H3 className="left-align" text="Thimi Ceramic Project" />
           <div className="image-container">
-            <img src={image} alt="" id="thimi-ceramics-image" />
+            <img
+              src={image}
+              alt="thimi ceramics image"
+              id="thimi-ceramics-image"
+            />
             <div className="thimi-ceramics-paragraph">
               <ParagraphComponent
+                className="sarlahi-paragraph"
                 align="right-align"
                 paragraph=" Thimi municipality in Bhaktapur District is well known for its
               pottery heritage. The charming town exudes some or another aspect of
@@ -149,6 +135,7 @@ const AboutUsPage = () => {
               aggressive replacement of terracotta products with plastic ones."
               />
               <ParagraphComponent
+                className="sarlahi-paragraph"
                 align="right-align"
                 paragraph="  Vijaya Laxmi is proud to be collaborating with native residents of
               Thimi, who are ceramic artisans that have learnt the knowledge and

@@ -8,8 +8,8 @@ import IndividualCollectionCarpet from "./individual-collection-carpet";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../../client.js";
 
-const IndividualCollection = () => {
-  const [rugData, setRugData] = useState(null);
+const IndividualCollection = (props) => {
+  const [rugData, setRugData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const collectionName = useParams().collectionName;
 
@@ -43,29 +43,15 @@ const IndividualCollection = () => {
         rugList={rugData.rugList}
         collectionInformation={collectionName}
       />
-      <IndividualCollectionItems
-        rugList={rugData.rugList}
-        collectionName={collectionName}
-      />
+      <div className="individualCollectionColumns">
+        <IndividualCollectionItems
+          rugList={rugData.rugList}
+          collectionName={collectionName}
+          className="individualCollectionRightCol"
+        />
+      </div>
     </section>
   );
 };
-
-// const IndividualCollection = () => {
-//   const carpetName = useParams().collectionName;
-//   const collection = collectionArray.find(
-//     (x) => x.collectionName == carpetName
-//   );
-//   const { id, collectionImage, collectionName, rugs } = collection;
-//   console.log(id, collectionImage, collectionName, rugs);
-//   return (
-//     <section className="individualCollectionSection">
-//       <IndividualCollectiionBanner
-//         collectionInformation={{ collectionImage, collectionName }}
-//       />
-//       <IndividualCollectionItems rugs={rugs} />
-//     </section>
-//   );
-// };
 
 export default IndividualCollection;

@@ -7,7 +7,7 @@ import FooterSection from "../../footer/footerSection";
 import sanityClient from "../../client.js";
 
 const CollectionsPage = () => {
-  const [trialData, setTrialData] = useState(null);
+  const [trialData, setTrialData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
@@ -36,34 +36,13 @@ const CollectionsPage = () => {
   }
   return (
     <section className="collectionSection">
-      {/* <h1 className="collectionPageHeading">Collections Page</h1> */}
       <div className="collectionWrapper">
         {trialData.map((collection, index) => {
           return <CollectionItem key={index} collection={collection} />;
         })}
       </div>
-      {/* <IndividualCollectiionBanner
-        collectionInformation={{ collectionImage, collectionName }}
-      /> */}
-      {/* <IndividualCollectionItems rugs={rugs} /> */}
     </section>
   );
 };
-// const CollectionsPage = () => {
-//   return (
-//     <section className="collectionSection">
-//       <h1 className="collectionPageHeading">Collections Page</h1>
-//       <div className="collectionPage">
-//         {collectionArray.map((collection, index) => {
-//           return (
-//             <div id={collection.id} className="collectionWrapper">
-//               <CollectionItem id={index} collection={collection} />
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </section>
-//   );
-// };
 
 export default CollectionsPage;

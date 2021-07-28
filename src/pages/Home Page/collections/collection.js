@@ -1,8 +1,9 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Collection = (props) => {
   const { image, heading, buttonLabel, collectionType } = props.collection;
+  console.log(collectionType, "COLECTION TYPE");
   return (
     <div
       className="collection-item"
@@ -12,9 +13,15 @@ const Collection = (props) => {
       }}
     >
       <h1 className="collection-heading">{heading}</h1>
-      <Link to={`/products/${collectionType}`}>
-        <button className="view-collection-button">{buttonLabel}</button>
-      </Link>
+      {collectionType === "Ceramics" ? (
+        <Link to={`#`}>
+          <button className="view-collection-button">{buttonLabel}</button>
+        </Link>
+      ) : (
+        <Link to={`/products/${collectionType}`}>
+          <button className="view-collection-button">{buttonLabel}</button>
+        </Link>
+      )}
     </div>
   );
 };

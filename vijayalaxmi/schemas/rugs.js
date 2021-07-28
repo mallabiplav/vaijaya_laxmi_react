@@ -3,6 +3,7 @@ export default {
   title: "Rugs",
   type: "document",
   fields: [
+    { name: "id", title: "Rug ID", type: "string" },
     {
       name: "title",
       title: "Rug Name",

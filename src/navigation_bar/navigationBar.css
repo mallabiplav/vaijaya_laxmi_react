@@ -1,19 +1,21 @@
 .logo-image {
   height: auto;
   width: 100%;
-  max-width: clamp(7.5em, 7vw, 10em);
+  max-width: clamp(6em, 4vw, 10em);
   filter: grayscale(0);
 }
 
 nav {
+  position: absolute;
   top: 0;
+  /* background-color: rgba(104, 102, 102, 0.623); */
   min-width: 23em;
   display: flex;
   font-family: var(--alternate-font);
-  position: absolute;
-  justify-content: center;
+  padding: 0 3em;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 1000;
   width: 100%;
   transition: background-color 500ms ease-in, opacity 800ms ease-in;
@@ -24,7 +26,7 @@ nav {
   opacity: 1;
 }
 .nav-link {
-  font-size: clamp(1rem, 1vw, 3rem);
+  font-size: clamp(0.8rem, 0.9vw, 3rem);
 }
 .nav-item {
   padding: 0.5em;
@@ -32,11 +34,11 @@ nav {
 
 .nav-item a {
   text-decoration: none;
-  color: black;
+  color: rgb(49, 49, 49);
 }
 
 .nav-item a:hover {
-  color: rgb(124, 69, 6);
+  color: rgb(233, 233, 233);
   /* text-decoration: underline; */
 }
 
@@ -104,6 +106,7 @@ nav {
   right: 10%;
 } */
 .landing-navbar-active {
+  flex-direction: column;
   padding-top: 2em;
   padding-bottom: 5em;
   /* position: absolute; */
