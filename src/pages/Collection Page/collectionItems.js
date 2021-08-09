@@ -7,10 +7,11 @@ const CollectionItems = (props) => {
   return (
     <Link
       to={`/products/rugs/${collectionName}`}
+      id={collectionName}
       className="collectionItem"
       style={{
-        background: `linear-gradient(0deg,rgba(10, 10, 10, 0.35), rgba(10, 10, 10, 0.35)), url(${rugList[1].imageUrl})`,
-        backgroundSize: "cover",
+        background: `linear-gradient(0deg,rgba(10, 10, 10, 0.35), rgba(10, 10, 10, 0.35)), url(${rugList[2].imageUrl})`,
+        backgroundSize: "contain",
       }}
     >
       <H3 text={collectionName} />

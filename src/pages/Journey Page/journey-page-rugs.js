@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import carding from "../../images/journey-images/journey-cording.jpg";
 import spinning from "../../images/journey-images/journey-spinning.jpg";
 import balling from "../../images/journey-images/journey-balling.JPG";
@@ -9,8 +9,139 @@ import H1 from "../../components/text-components/h1-component";
 import H2 from "../../components/text-components/h2-component";
 import H3 from "../../components/text-components/h3-component";
 import Paragraph from "../../components//text-components/paragraph-component";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import HalfContainer from "./journey-half-container-component";
+gsap.registerPlugin(ScrollTrigger);
 
 const JourneyPageRugs = () => {
+  const halfContainer = useRef(null);
+  const fullContainerRef1 = useRef(null);
+  const fullContainerRef2 = useRef(null);
+  const fullContainerRef3 = useRef(null);
+  const fullContainerAnimationTl = gsap.timeline();
+  const fullContainerAnimationTl2 = gsap.timeline();
+  const fullContainerAnimationTl3 = gsap.timeline();
+
+  useEffect(() => {
+    const fullContainerImg = fullContainerRef1.current.children[0].children[0];
+    const fullContainerHeading =
+      fullContainerRef1.current.children[0].children[1].firstElementChild;
+    const fullContainerParagraph = fullContainerHeading.nextElementSibling;
+    fullContainerAnimationTl
+      .to(
+        fullContainerImg,
+        {
+          opacity: 1,
+          duration: 5,
+          css: { filter: "blur(10px) grayscale(100%)" },
+        },
+        "+=.5"
+      )
+      .fromTo(
+        fullContainerHeading,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "-=.5"
+      )
+      .fromTo(
+        fullContainerParagraph,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "<"
+      );
+
+    ScrollTrigger.create({
+      trigger: fullContainerRef1.current,
+      scrub: true,
+      animation: fullContainerAnimationTl,
+      pin: true,
+      start: "top top",
+      end: "+=200%",
+      // markers: true,
+    });
+  }, [fullContainerAnimationTl]);
+
+  useEffect(() => {
+    const fullContainerImg = fullContainerRef2.current.children[0].children[0];
+    const fullContainerHeading =
+      fullContainerRef2.current.children[0].children[1].firstElementChild;
+    const fullContainerParagraph = fullContainerHeading.nextElementSibling;
+    fullContainerAnimationTl2
+      .to(
+        fullContainerImg,
+        {
+          opacity: 1,
+          duration: 5,
+          css: { filter: "blur(10px) grayscale(100%)" },
+        },
+        "+=.5"
+      )
+      .fromTo(
+        fullContainerHeading,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "-=.5"
+      )
+      .fromTo(
+        fullContainerParagraph,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "<"
+      );
+
+    ScrollTrigger.create({
+      trigger: fullContainerRef2.current,
+      scrub: true,
+      animation: fullContainerAnimationTl2,
+      pin: true,
+      start: "top top",
+      end: "+=200%",
+      // markers: true,
+    });
+  }, [fullContainerAnimationTl2]);
+
+  //WASHING AND FINISHING ANIMATION
+
+  useEffect(() => {
+    const fullContainerImg = fullContainerRef3.current.children[0].children[0];
+    const fullContainerHeading =
+      fullContainerRef3.current.children[0].children[1].firstElementChild;
+    const fullContainerParagraph = fullContainerHeading.nextElementSibling;
+    fullContainerAnimationTl3
+      .to(
+        fullContainerImg,
+        {
+          opacity: 1,
+          duration: 5,
+          css: { filter: "blur(10px) grayscale(100%)" },
+        },
+        "+=.5"
+      )
+      .fromTo(
+        fullContainerHeading,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "-=.5"
+      )
+      .fromTo(
+        fullContainerParagraph,
+        { opacity: 0, duration: 0.5 },
+        { opacity: 3, duration: 12 },
+        "<"
+      );
+
+    ScrollTrigger.create({
+      trigger: fullContainerRef3.current,
+      scrub: true,
+      animation: fullContainerAnimationTl3,
+      pin: true,
+      start: "top top",
+      end: "+=200%",
+      // markers: true,
+    });
+  }, [fullContainerAnimationTl3]);
+
   return (
     <div className="journey-rugs-container">
       <div className="journey-rug-container-main">
@@ -27,22 +158,11 @@ const JourneyPageRugs = () => {
           existed for hundreds of years."
         />
       </div>
-      <div className="journey-rug-container journey-half-container carding-container">
-        <H2 className="journey-rug-heading carding-heading" text="Carding" />
-        <div className="journey-half-image-container">
-          <img src={carding} />
-        </div>
-        <Paragraph
-          className="journey-rug-paragraph carding-spinning-paragaraph"
-          paragraph="Carding is the process of untangling and opening up the fibers of
-            the raw wool. A small portion of wool is placed on the bottom carder
-            and combed through with the second carder on top. When all the wool
-            has been transferred from the bottom carder to the top, the carding
-            combs are flipped over and the process is reversed. The rhythmic
-            process is continued until a uniformity is produced in the wool."
-        />
-      </div>
-      <div className="journey-rug-container journey-full-container spinning-container">
+      <HalfContainer ref={halfContainer} img={carding} />
+      <div
+        ref={fullContainerRef1}
+        className="journey-rug-container journey-full-container spinning-container"
+      >
         <div className="spinning-info">
           <img src={spinning} />
           <div className="journey-full-info">
@@ -74,18 +194,23 @@ const JourneyPageRugs = () => {
         />
       </div>
 
-      <div className="journey-rug-container journey-full-container balling-container">
-        <img src={balling} />
-        <div className="journey-full-info">
-          <H2
-            className="journey-rug-heading journey-full-heading balling-heading"
-            text="Balling"
-          />
-          <Paragraph
-            className="journey-rug-paragraph journey-full-paragraph balling-paragaraph"
-            paragraph="  Once dyed, the yarn is spun into balls of yarns, which makes it
+      <div
+        ref={fullContainerRef2}
+        className="journey-rug-container journey-full-container balling-container"
+      >
+        <div className="balling-info">
+          <img src={balling} />
+          <div className="journey-full-info">
+            <H2
+              className="journey-rug-heading journey-full-heading balling-heading"
+              text="Balling"
+            />
+            <Paragraph
+              className="journey-rug-paragraph journey-full-paragraph balling-paragaraph"
+              paragraph="  Once dyed, the yarn is spun into balls of yarns, which makes it
             easier for the weavers to start their craft."
-          />
+            />
+          </div>
         </div>
       </div>
       <div className="journey-rug-container journey-half-container weaving-container">
@@ -102,21 +227,26 @@ const JourneyPageRugs = () => {
         />
       </div>
 
-      <div className="journey-rug-container journey-full-container washing-finishing-container">
-        <img src={weaving} />
-        <div className="journey-full-info">
-          <H2
-            className="journey-rug-heading journey-full-heading washing-finishing-heading"
-            text="Washing and Finishing"
-          />
-          <Paragraph
-            className="journey-rug-paragraph journey-full-paragraph washing-finishing-paragaraph"
-            paragraph="  Prior to washing, artisans put in their final touches to even out
+      <div
+        ref={fullContainerRef3}
+        className="journey-rug-container journey-full-container washing-finishing-container"
+      >
+        <div className="washing-info">
+          <img src={weaving} />
+          <div className="journey-full-info">
+            <H2
+              className="journey-rug-heading journey-full-heading washing-finishing-heading"
+              text="Washing and Finishing"
+            />
+            <Paragraph
+              className="journey-rug-paragraph journey-full-paragraph washing-finishing-paragaraph"
+              paragraph="  Prior to washing, artisans put in their final touches to even out
             and trim the rug. Once this is done, the art of washing begins where
             every piece is rinsed, cleansed and groomed with utmost care, ready
             to be shipped. Once shipped, the journey of our rug ends with us and
             begins with you."
-          />
+            />
+          </div>
         </div>
       </div>
     </div>

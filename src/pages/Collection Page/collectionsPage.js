@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { collectionArray } from "./collectionArray";
 import CollectionItem from "./collectionItems";
 import "../../css/collectionPage.css";
 import "../../css/loading.css";
@@ -8,7 +7,6 @@ import sanityClient from "../../client.js";
 const CollectionsPage = () => {
   const [trialData, setTrialData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
 
   useEffect(() => {
     sanityClient
@@ -23,7 +21,7 @@ const CollectionsPage = () => {
         setTrialData(data);
         setIsLoading(false);
       })
-      .catch(console.error);
+      .catch((error) => console.log(error));
   }, []);
   // console.log(trialData);
   if (isLoading) {

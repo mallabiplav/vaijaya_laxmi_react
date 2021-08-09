@@ -65,7 +65,7 @@ footer {
   }
   .footer-left-content {
     padding: 0;
-    margin: 0.5em 6em;
+    margin: 0.5em 2em;
   }
   .footer-address {
     margin-top: 1em;
@@ -80,6 +80,7 @@ footer {
   }
 
   .footer-right {
+    margin-top: 1em;
     text-align: center;
   }
 }

@@ -20,7 +20,7 @@ const IndividualCollectionItem = (props) => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h5 className="individualCollectionRugName">{title}</h5>
+        <h1 className="individualCollectionRugName">{title}</h1>
       </div>
       {showItem && (
         <IndividualCollectionCarpet

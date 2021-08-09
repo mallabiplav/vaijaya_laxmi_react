@@ -22,14 +22,12 @@ const IndividualCollectionCarpet = (props) => {
           X
         </div>
         <div className="individual-carpet-info-left-col">
-          <div
+          <img
+            src={imageUrl}
+            alt="carpet"
             className="individual-collection-main-picture"
-            style={{
-              backgroundImage: `url(${imageUrl})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
+          />
+
           {/* <div className="individual-collection-secondary-pictures">
             <div className="individual-collection-secondary-picture"></div>
             <div className="individual-collection-secondary-picture"></div>
@@ -59,6 +57,14 @@ const IndividualCollectionCarpet = (props) => {
           />
           <button className="individual-carpet-get-quote-button">
             Get Quote
+          </button>
+          <button
+            onClick={() => {
+              setShowItem(false);
+            }}
+            className="individual-carpet-close-button-bottom"
+          >
+            Close
           </button>
         </div>
       </div>

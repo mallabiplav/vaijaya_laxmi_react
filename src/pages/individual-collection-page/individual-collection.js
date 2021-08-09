@@ -1,10 +1,7 @@
-import { collectionArray } from "../Collection Page/collectionArray";
 import { Link, useParams } from "react-router-dom";
-import { individualCollectionArray } from "../individual-collection-page/individual-collection-array";
 import IndividualCollectionBanner from "./individual-collection-banner";
 import IndividualCollectionItems from "./individual-collection-items";
 import "../../css/individualCollectionPage.css";
-import IndividualCollectionCarpet from "./individual-collection-carpet";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../../client.js";
 

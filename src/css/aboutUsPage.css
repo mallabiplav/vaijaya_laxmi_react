@@ -165,12 +165,8 @@ blockquote {
 
 .our-projects {
   margin: 5em 10% 0;
-  /* margin-top: 5em; */
   border: 2px solid rgb(219, 219, 219);
   padding: 3em 4em;
-  /* background-color: rgb(243, 245, 220); */
-
-  /* background-color: rgb(255, 246, 234); */
 }
 .our-projects h2 {
   margin-bottom: 2rem;
@@ -216,6 +212,12 @@ blockquote {
 }
 
 @media (max-width: 768px) {
+  .about-us-main {
+    margin-top: 13vh;
+    height: auto;
+    width: auto;
+  }
+
   .founders-info-container {
     display: flex;
     flex-direction: column;
@@ -236,9 +238,9 @@ blockquote {
     margin: 0.5em 0;
   }
   .our-projects {
-    margin: 2em 5% 0;
+    margin: 2em 0 0;
     border: 2px solid rgb(219, 219, 219);
-    padding: 2em;
+    padding: 1em;
   }
   .sarlahi-rug-container h3,
   .thimi-ceramics-container h3 {

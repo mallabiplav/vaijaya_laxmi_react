@@ -1,13 +1,25 @@
 import { React, useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../images/vijayaLaxmiLogoBlack.png";
+import useWindowDimensions from "../custom-hooks/useWindowDimensions";
 import "./navigationBar.css";
 
 const NavigationBar = () => {
+  const { height, width } = useWindowDimensions();
+
   const [showHamburgerNav, setShowHamburgerNav] = useState(false);
   const [hamburgerNavOpen, sethamburgerNavOpen] = useState(false);
-  const location = useLocation();
-  console.log(location.pathname === "/journey");
+
+  useEffect(() => {
+    if (width <= 768) {
+      setShowHamburgerNav(true);
+    } else {
+      setShowHamburgerNav(false);
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    }
+  }, [width]);
 
   const scrollFunction = () => {
     if (
@@ -15,6 +27,7 @@ const NavigationBar = () => {
       document.documentElement.scrollTop > 300
       // location.pathname !== "/journey"
     ) {
+      console.log(width);
       setTimeout(3000);
       setShowHamburgerNav(true);
     } else {
@@ -95,10 +108,6 @@ const NavigationBar = () => {
 
 // const navBar = document.querySelector(".nav-bar");
 // console.log("NAVBAR", navBar);
-
-// window.onscroll = function () {
-//   scrollFunction();
-// };
 
 // function scrollFunction() {
 //   if (

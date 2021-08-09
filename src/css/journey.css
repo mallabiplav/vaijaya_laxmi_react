@@ -5,10 +5,10 @@
 }
 .journey-page-section img {
   max-width: 100%;
-  max-height: 50em;
+  /* max-height: 50em; */
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: 0.9s filter ease;
+  /* filter: grayscale(100%); */
+  /* transition: 0.9s filter ease; */
 }
 .journey-page-heading {
   margin-bottom: 0.5em;
@@ -28,8 +28,6 @@
   align-content: center;
 }
 .journey-main-image-container {
-  background-color: red;
-
   overflow: hidden;
   margin: 1.5rem 0;
 }
@@ -38,7 +36,7 @@
   /* height: 100%; */
   /* height: 60vh; */
   object-fit: cover;
-  object-position: center -10em;
+  /* object-position: center -10em; */
 }
 .journey-rug-container {
   height: 100vh;
@@ -49,7 +47,7 @@
   margin-bottom: 0;
 }
 .journey-rug-heading {
-  margin-top: 0.5em;
+  /* margin-top: 0.5em; */
 }
 .journey-rug-paragraph {
   max-width: 40em;
@@ -58,7 +56,8 @@
 
 .journey-half-container {
   display: grid;
-  grid-template-rows: min-content 0.7fr min-content;
+  grid-template-rows: 0.1fr 0.75fr min-content;
+  gap: 1.5em;
   align-content: center;
 }
 .journey-half-image-container {
@@ -70,7 +69,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  margin: 1.5rem 0;
+  /* margin: 1.5rem 0; */
 }
 .journey-full-container {
   position: relative;
@@ -106,9 +105,9 @@
   margin: 8em 0;
 }
 
-img:hover {
+/* img:hover {
   filter: grayscale(0);
-}
+} */
 
 .journey-page-header img {
   max-width: 100%;
@@ -122,5 +121,13 @@ img:hover {
   }
   .journey-rug-paragraph {
     margin: 1em 2.5em;
+  }
+  .journey-full-container img {
+    height: 100%;
+  }
+  .journey-rug-paragraph {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5em 0.5em;
   }
 }

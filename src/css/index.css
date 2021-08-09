@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 #vijaya-laxmi-heading-font {
@@ -77,12 +78,7 @@ button {
 .landing-heading h1 {
   letter-spacing: 23px;
 }
-.landing-heading h4 {
-  text-transform: uppercase;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  letter-spacing: 16px;
-}
+
 .landing-heading p {
   margin-top: 0.5em;
   font-size: clamp(1rem, 1vw, 2rem);
@@ -121,6 +117,8 @@ button {
   width: 100%;
   left: auto;
   top: calc(30vh - 7vw);
+  letter-spacing: 10px;
+
   /* margin-top: 8.5%; */
   text-transform: uppercase;
 }
@@ -143,7 +141,7 @@ button {
   font-weight: 400;
   text-align: center;
   margin: 1.5em auto;
-  font-size: clamp(1rem, 1.5vw, 3rem);
+  font-size: clamp(1.3rem, 1.5vw, 3rem);
 }
 
 .journey-content-follow-journey {
@@ -152,24 +150,7 @@ button {
   opacity: 1;
   text-decoration: underline;
   color: #ffffff;
-  /* transform: translateY(-10px); */
   transition: opacity 1000ms ease-in, transform 400ms ease-in;
-}
-
-@media (max-width: 768px) {
-  .journey {
-    max-width: 100%;
-    margin: 2.5em auto;
-  }
-  .journey-content {
-    max-width: 90%;
-    padding: 20em 0em;
-    top: 70%;
-    border-radius: 2px;
-
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 .collections {
@@ -225,23 +206,11 @@ button {
 }
 
 .blog-header {
-  /* font-size: 4rem; */
   font-family: var(--primary-font);
   font-weight: 400;
   text-transform: uppercase;
   padding: 0.5em;
   position: relative;
-}
-
-.blog-header::before,
-.blog-header::after {
-  content: "";
-  display: inline-block;
-  border: 0.1rem solid black;
-  width: var(--blog-line-width);
-  margin: auto 3rem;
-  transform: translateY(-1.2rem);
-  transition: width 800ms ease-in-out;
 }
 
 .blog-item-heading {
@@ -312,16 +281,28 @@ input[type="text"] {
 }
 
 @media (max-width: 768px) {
+  .landing-heading h1 {
+    letter-spacing: 0;
+  }
+  #vijaya-laxmi-heading-font:nth-child(2) {
+    margin-bottom: 0.5em;
+  }
   .journey {
     max-width: 100%;
+  }
+  .journey-header {
+    top: calc(23vh - 7vw);
+    letter-spacing: 0px;
   }
   .journey-content {
     max-width: 90%;
     padding: 4em 2em;
+    top: 55%;
   }
 
   .journey-content-paragraph {
     margin: auto;
+    margin-bottom: 1em;
   }
 
   .blog-items {
@@ -347,7 +328,7 @@ input[type="text"] {
     width: 15em;
     justify-self: center;
     align-self: center;
-    /* margin-right: 0.5em; */
+    margin-right: 0;
     /* padding: 0.65em; */
   }
 
