@@ -1,25 +1,26 @@
 import { React, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/vijayaLaxmiLogoBlack.png";
-import useWindowDimensions from "../custom-hooks/useWindowDimensions";
 import "./navigationBar.css";
+import { useMediaQuery } from "react-responsive";
 
 const NavigationBar = () => {
-  const { height, width } = useWindowDimensions();
-
   const [showHamburgerNav, setShowHamburgerNav] = useState(false);
   const [hamburgerNavOpen, sethamburgerNavOpen] = useState(false);
+  const isTablet = useMediaQuery({
+    query: "(max-width: 768px)",
+  });
 
   useEffect(() => {
-    if (width <= 768) {
-      setShowHamburgerNav(true);
-    } else {
-      setShowHamburgerNav(false);
-      window.onscroll = function () {
-        scrollFunction();
-      };
-    }
-  }, [width]);
+    setShowHamburgerNav(false);
+    window.onscroll = function () {
+      scrollFunction();
+    };
+  }, []);
+
+  useEffect(() => {
+    isTablet && setShowHamburgerNav(true);
+  });
 
   const scrollFunction = () => {
     if (
@@ -27,7 +28,6 @@ const NavigationBar = () => {
       document.documentElement.scrollTop > 300
       // location.pathname !== "/journey"
     ) {
-      console.log(width);
       setTimeout(3000);
       setShowHamburgerNav(true);
     } else {
@@ -70,32 +70,68 @@ const NavigationBar = () => {
         <div className="nav-items">
           <ul>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link
+                className="nav-link"
+                to="/"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/products/rugs">
+              <Link
+                className="nav-link"
+                to="/products/rugs"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 Rugs
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/journey">
+              <Link
+                className="nav-link"
+                to="/journey"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 Journey
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about-us">
+              <Link
+                className="nav-link"
+                to="/about-us"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 About Us
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a
+                className="nav-link"
+                href="#"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 Blog
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a
+                className="nav-link"
+                href="#"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
                 Contact
               </a>
             </li>

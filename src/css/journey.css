@@ -116,8 +116,13 @@
 }
 
 @media (max-width: 768px) {
+  .journey-page-section img {
+    height: 100%;
+    object-fit: cover;
+  }
   .journey-rug-container-main {
-    grid-template-rows: min-content min-content min-content;
+    height: 90vh;
+    grid-template-rows: min-content 0.8fr min-content;
   }
   .journey-rug-paragraph {
     margin: 1em 2.5em;
@@ -126,7 +131,7 @@
     height: 100%;
   }
   .journey-rug-paragraph {
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     margin: 0.5em 0.5em;
   }

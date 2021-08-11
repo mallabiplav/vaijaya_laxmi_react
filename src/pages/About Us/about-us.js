@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../../images/Journey-of-your-rug.jpg";
-import teamImage from "../../images/team_picture.jpg";
+import foundersImage from "../../images/founders-image.JPEG";
 import AboutUsHeading from "./about-us-heading-component";
 import AboutUsSubheading from "./about-us-sub-heading-component";
 import Value from "./values-component";
@@ -61,7 +61,7 @@ const AboutUsPage = () => {
         </div>
         <div className="founders-image-container">
           <img
-            src={teamImage}
+            src={foundersImage}
             alt="founders-image"
             className="about-us-founders-image"
           />

@@ -4,10 +4,10 @@ import spinning from "../../images/journey-images/journey-spinning.jpg";
 import balling from "../../images/journey-images/journey-balling.JPG";
 import dyeing from "../../images/journey-images/journey-dyeing.jpg";
 import weaving from "../../images/journey-images/journey-weaving.JPG";
-import mainImage from "../../images/journey-images/journey-main-img.JPG";
+import washing from "../../images/journey-images/journey-washing.JPG";
+import mainImage from "../../images/journey-images/journey-main-img.jpg";
 import H1 from "../../components/text-components/h1-component";
 import H2 from "../../components/text-components/h2-component";
-import H3 from "../../components/text-components/h3-component";
 import Paragraph from "../../components//text-components/paragraph-component";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -57,7 +57,7 @@ const JourneyPageRugs = () => {
       animation: fullContainerAnimationTl,
       pin: true,
       start: "top top",
-      end: "+=200%",
+      end: "+=100%",
       // markers: true,
     });
   }, [fullContainerAnimationTl]);
@@ -96,7 +96,7 @@ const JourneyPageRugs = () => {
       animation: fullContainerAnimationTl2,
       pin: true,
       start: "top top",
-      end: "+=200%",
+      end: "+=100%",
       // markers: true,
     });
   }, [fullContainerAnimationTl2]);
@@ -137,7 +137,7 @@ const JourneyPageRugs = () => {
       animation: fullContainerAnimationTl3,
       pin: true,
       start: "top top",
-      end: "+=200%",
+      end: "+=100%",
       // markers: true,
     });
   }, [fullContainerAnimationTl3]);
@@ -232,7 +232,7 @@ const JourneyPageRugs = () => {
         className="journey-rug-container journey-full-container washing-finishing-container"
       >
         <div className="washing-info">
-          <img src={weaving} />
+          <img src={washing} />
           <div className="journey-full-info">
             <H2
               className="journey-rug-heading journey-full-heading washing-finishing-heading"

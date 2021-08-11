@@ -217,10 +217,15 @@ blockquote {
     height: auto;
     width: auto;
   }
+  .our-founders-section {
+    margin-top: 3em;
 
+    padding: 2em 0 1em 0;
+  }
   .founders-info-container {
     display: flex;
     flex-direction: column;
+    margin: 2em 1.5em;
   }
   blockquote {
     padding: 2em 2em;

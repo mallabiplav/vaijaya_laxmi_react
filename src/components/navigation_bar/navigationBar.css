@@ -128,9 +128,9 @@ nav {
     display: none;
   }
   .hamburger-menu {
-    opacity: 70%;
+    opacity: 50%;
     top: 5%;
-    right: 8%;
+    right: 5%;
     width: 2em;
     height: 2em;
   }

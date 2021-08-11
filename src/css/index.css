@@ -37,9 +37,10 @@ button {
   /* justify-content: center; */
 }
 .landing-page-main-content {
-  background-image: url("../images/design-guide.jpg");
+  background-image: url("../images/landing-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center left;
   display: flex;
   /* align-self: center; */
   align-items: center;
