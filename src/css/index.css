@@ -144,7 +144,7 @@ button {
   font-weight: 400;
   text-align: center;
   margin: 1.5em auto;
-  font-size: clamp(1rem, 1.5vw, 3rem);
+  font-size: clamp(0.9rem, 1.5vw, 3rem);
 }
 
 .journey-content-follow-journey {

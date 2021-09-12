@@ -64,7 +64,6 @@ const NavigationBar = () => {
           }
           onClick={() => {
             sethamburgerNavOpen(!hamburgerNavOpen);
-            // setShowHamburgerNav(!showHamburgerNav);
           }}
         >
           <span className="hamburger-menu-button"></span>

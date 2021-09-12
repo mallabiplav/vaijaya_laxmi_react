@@ -13,12 +13,12 @@ footer {
   max-width: 35em;
 }
 .footer-left-heading {
-  line-height: 2.5rem;
-  margin-bottom: 0.5rem;
+  line-height: 2.5em;
+  margin-bottom: 0.5em;
 }
 .footer-left-content {
   font-weight: lighter;
-  line-height: 1.7rem;
+  line-height: 1.6em;
   color: white;
 }
 .social-media-icons,
@@ -61,7 +61,7 @@ footer {
     text-align: center;
   }
   .footer-left-heading {
-    line-height: 2.5rem;
+    line-height: 2.5em;
   }
   .footer-left-content {
     padding: 0;

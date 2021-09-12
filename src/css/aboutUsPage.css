@@ -183,8 +183,6 @@ blockquote {
 .founders-paragaraph {
   background-color: #f3f3e1;
   color: rgb(80, 80, 80);
-  /* line-height: 2rem; */
-  max-width: 55em;
   padding: 2em;
   display: flex;
   align-items: center;
@@ -206,7 +204,7 @@ blockquote {
 
 .thimi-ceramics-container {
   margin-top: 2rem;
-  max-height: 35em;
+  /* max-height: 35em; */
   overflow: hidden;
 }
 
@@ -223,6 +221,10 @@ blockquote {
   object-fit: cover;
   /* height: 100%; */
   /* float: left; */
+}
+#thimi-ceramics-image {
+  max-height: 35em;
+  width: 100%;
 }
 .thimi-ceramics-paragraph,
 .sarlahi-paragraph {
@@ -259,6 +261,12 @@ blockquote {
   .founders-info-container {
     margin: 1em;
   }
+  .quote-container {
+    padding: 0em 10em;
+  }
+  .founders-paragaraph {
+    padding: 3em 10em;
+  }
 }
 @media (max-width: 768px) {
   .about-us-main {
@@ -292,14 +300,18 @@ blockquote {
 
   blockquote {
     padding: 2em 2em;
-    line-height: 2.5rem;
+    line-height: 2em;
   }
   .founders-paragaraph {
     /* line-height: 2rem; */
     /* max-width: 55em; */
-    padding: 2em 1.5em;
+    padding: 2em 6em;
     line-height: 2rem;
   }
+  .quote-container {
+    padding: 0em 1em;
+  }
+
   .image-container {
     grid-template-columns: none;
     grid-template-rows: auto 1fr;
@@ -328,5 +340,8 @@ blockquote {
   }
   .about-us-paragraph-container {
     max-width: 90%;
+  }
+  .founders-paragaraph {
+    padding: 2em 2em;
   }
 }

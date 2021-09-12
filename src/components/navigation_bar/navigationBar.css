@@ -8,7 +8,7 @@
 nav {
   position: absolute;
   top: 0;
-  min-width: 23em;
+  /* min-width: 23em; */
   display: flex;
   font-family: var(--alternate-font);
   padding: 0 3em;

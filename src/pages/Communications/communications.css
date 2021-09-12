@@ -36,7 +36,7 @@
 }
 
 .communications-left p {
-  font-size: clamp(1.3rem, 1.5vw, 2rem);
+  font-size: clamp(0.8rem, 1.5vw, 2rem);
   line-height: 1.4em;
 }
 
@@ -52,9 +52,13 @@
 }
 
 @media (max-width: 768px) {
+  .communications-section {
+    padding: 5vw;
+    min-height: 80vh;
+  }
   .communications-section h1 {
     /* color: white; */
-    margin-top: 20%;
+    margin-top: 10vh;
   }
 
   .communications-main {
@@ -69,7 +73,7 @@
     max-width: none;
   }
   .communications-left p {
-    text-align: justify;
+    text-align: center;
   }
   .communications-right {
     text-align: center;
@@ -78,5 +82,19 @@
   .communications-right ul li {
     justify-content: center;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 425px) {
+  .communications-section h1 {
+    /* color: white; */
+    margin-top: 10vh;
+  }
+}
+
+@media (max-width: 380px) {
+  .communications-section h1 {
+    /* color: white; */
+    margin-top: 15vh;
   }
 }
