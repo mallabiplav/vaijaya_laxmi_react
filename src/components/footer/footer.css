@@ -2,19 +2,15 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5em 3em;
+  padding: 5em 4em;
   background: #1b1b1b;
   color: white;
   font-family: var(--primary-font);
-  scroll-snap-type: none;
-  /* background-color: rgb(97, 66, 66); */
 }
 
 .footer-left {
   text-align: justify;
   max-width: 35em;
-
-  /* background-color: red; */
 }
 .footer-left-heading {
   line-height: 2.5rem;
@@ -49,6 +45,10 @@ footer {
 
 .footer-right {
   text-align: center;
+}
+
+.footer-right p {
+  margin-top: 0.5em;
 }
 
 @media (max-width: 768px) {

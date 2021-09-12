@@ -1,11 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import IndividualCollectionBanner from "./individual-collection-banner";
 import IndividualCollectionItems from "./individual-collection-items";
 import "../../css/individualCollectionPage.css";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../../client.js";
 
-const IndividualCollection = (props) => {
+const IndividualCollection = () => {
   const [rugData, setRugData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const collectionName = useParams().collectionName;
@@ -14,19 +14,20 @@ const IndividualCollection = (props) => {
     sanityClient
       .fetch(
         `*[_type == "rugCollections" && collectionName == '${collectionName}'][0]{
-            typeOfProduct->{title},
+            text,
+            mainCollectionImage{asset->{path,url}},
             collectionName,
             rugList[]->{title,description,material,size,"imageUrl": carpetImage.asset->url}
         }`
       )
       .then((data) => {
-        console.log(data.rugList, "ASSD");
+        console.log(data);
         setRugData(data);
         setIsLoading(false);
       })
-      .catch(console.eror);
+      .catch(console.error);
   }, []);
-  console.log(rugData);
+
   if (isLoading) {
     return (
       <div className="loading">
@@ -34,10 +35,12 @@ const IndividualCollection = (props) => {
       </div>
     );
   }
+
   return (
     <section className="individualCollectionSection">
       <IndividualCollectionBanner
-        rugList={rugData.rugList}
+        collectionText={rugData.text}
+        collectionBannerImg={rugData.mainCollectionImage.asset.url}
         collectionInformation={collectionName}
       />
       <div className="individualCollectionColumns">

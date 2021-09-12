@@ -5,7 +5,7 @@ import "../../css/loading.css";
 import sanityClient from "../../client.js";
 
 const CollectionsPage = () => {
-  const [trialData, setTrialData] = useState([]);
+  const [allCollections, setAllCollections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -14,16 +14,15 @@ const CollectionsPage = () => {
         `*[_type == "rugCollections"]{
             typeOfProduct->{title},
             collectionName,
-            rugList[]->{title,description,material,size,"imageUrl": carpetImage.asset->url}
+            mainCollectionImage{asset->{path,url}},
         }`
       )
       .then((data) => {
-        setTrialData(data);
+        setAllCollections(data);
         setIsLoading(false);
       })
       .catch((error) => console.log(error));
   }, []);
-  // console.log(trialData);
   if (isLoading) {
     return (
       <div className="loading">
@@ -34,7 +33,7 @@ const CollectionsPage = () => {
   return (
     <section className="collectionSection">
       <div className="collectionWrapper">
-        {trialData.map((collection, index) => {
+        {allCollections.map((collection, index) => {
           return <CollectionItem key={index} collection={collection} />;
         })}
       </div>

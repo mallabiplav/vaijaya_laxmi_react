@@ -15,6 +15,17 @@ export default {
       type: "string",
     },
     {
+      name: "mainCollectionImage",
+      title: "Rug Main Image",
+      type: "image",
+    },
+    {
+      title: "Text",
+      name: "text",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
       name: "rugList",
       title: "rug List",
       type: "array",

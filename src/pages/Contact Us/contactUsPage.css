@@ -1,0 +1,114 @@
+.contact-us-top {
+  margin-top: 12vh;
+  text-align: center;
+}
+
+.contact-us-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 3em;
+  padding-bottom: 5em;
+  padding-left: 10em;
+  padding-right: 10em;
+  gap: 3em;
+  justify-items: end;
+}
+.contact-us-left {
+  justify-self: flex-start;
+  margin-top: 1em;
+}
+.contact-address,
+.contact-email,
+.contact-telephone {
+  margin-bottom: 0.7em;
+}
+.contact-hear {
+  margin-top: 2em;
+  margin-bottom: 3em;
+  font-weight: bold;
+}
+
+.contact-main-image {
+  object-fit: cover;
+  margin-top: 2em;
+  max-width: 100%;
+}
+.contact-us-left h2 {
+  margin-bottom: 0.2em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  min-width: 30em;
+  max-width: 35em;
+  /* background-color: red; */
+}
+label {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+form input {
+  min-height: 4em;
+  width: 100%;
+  /* margin-top: 1.5em; */
+}
+input[type="text"] {
+  width: auto;
+  padding-left: 1em;
+}
+textarea {
+  padding: 1em;
+  resize: none;
+  min-height: 15em;
+  width: 100%;
+}
+
+.subscribe-newsletter {
+  display: flex;
+  /* align-items: center; */
+}
+.subscribe-newsletter label {
+  margin: auto;
+  margin-left: 0.5em;
+}
+input[type="checkbox"] {
+  width: 1.5em;
+}
+
+@media (max-width: 768px) {
+  .contact-us-top {
+    /* margin-top: 25%; */
+    text-align: center;
+  }
+  .contact-us-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    gap: 2em;
+    justify-items: start;
+  }
+
+  .contact-main-image {
+    max-width: 100%;
+  }
+  form {
+    min-width: auto;
+  }
+  input[type="text"] {
+    width: auto;
+    width: 100%;
+    align-self: flex-start;
+  }
+  .contact-button {
+    align-self: flex-start;
+    margin-top: 2em;
+  }
+  .subscribe-newsletter {
+    justify-content: start;
+    align-items: flex-start;
+  }
+}

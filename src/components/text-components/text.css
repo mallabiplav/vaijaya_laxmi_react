@@ -9,9 +9,12 @@
   --blog-line-width: 0em;
 }
 
+label {
+  font-family: var(--content-font);
+}
 .heading-1 {
   font-family: var(--alternate-font);
-  font-size: clamp(2rem, 3vw, 4rem);
+  font-size: clamp(2rem, 3.5vw, 4rem);
 }
 .heading-2 {
   font-family: var(--content-font);
@@ -34,6 +37,14 @@
 .paragraph-component {
   font-family: var(--primary-font);
   /* color: #ccbebe; */
-  font-size: clamp(1.2rem, 1.4vw, 2rem);
+  font-size: clamp(1.1rem, 1.4vw, 2rem);
   line-height: 1.7rem;
+}
+
+.dropDownText {
+  font-family: var(--primary-font);
+  /* color: #ccbebe; */
+  font-size: clamp(1.1rem, 1vw, 2rem);
+  line-height: 1.7rem;
+  font-weight: 400;
 }

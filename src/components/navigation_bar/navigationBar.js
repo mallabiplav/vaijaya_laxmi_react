@@ -3,24 +3,41 @@ import { Link } from "react-router-dom";
 import logo from "../../images/vijayaLaxmiLogoBlack.png";
 import "./navigationBar.css";
 import { useMediaQuery } from "react-responsive";
+import sanityClient from "../../client.js";
+import DropdownText from "../text-components/dropdown-text-component";
 
 const NavigationBar = () => {
+  const [collectionList, setCollectionList] = useState([]);
   const [showHamburgerNav, setShowHamburgerNav] = useState(false);
   const [hamburgerNavOpen, sethamburgerNavOpen] = useState(false);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "rugCollections"]{
+            collectionName
+        }`
+      )
+      .then((data) => {
+        setCollectionList(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
   const isTablet = useMediaQuery({
     query: "(max-width: 768px)",
   });
 
   useEffect(() => {
-    setShowHamburgerNav(false);
-    window.onscroll = function () {
-      scrollFunction();
-    };
-  }, []);
-
-  useEffect(() => {
-    isTablet && setShowHamburgerNav(true);
-  });
+    if (!isTablet) {
+      setShowHamburgerNav(false);
+      window.onscroll = function () {
+        scrollFunction();
+      };
+    } else {
+      setShowHamburgerNav(true);
+    }
+  }, [isTablet]);
 
   const scrollFunction = () => {
     if (
@@ -58,15 +75,10 @@ const NavigationBar = () => {
           hamburgerNavOpen ? "nav-bar landing-navbar-active" : "nav-bar"
         }
       >
-        {/* <div className="hamburger-menu">XXX</div> */}
         <Link to="/">
           <img src={logo} className="logo-image" alt="logo" />
         </Link>
-        {/* {hamburgerNavOpen && (
-          <h5 className="nav-bottom-heading" style={{ color: "#636363" }}>
-            Vijaya Laxmi
-          </h5>
-        )} */}
+
         <div className="nav-items">
           <ul>
             <li className="nav-item">
@@ -80,7 +92,7 @@ const NavigationBar = () => {
                 Home
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" id="nav-rugs">
               <Link
                 className="nav-link"
                 to="/products/rugs"
@@ -90,6 +102,39 @@ const NavigationBar = () => {
               >
                 Rugs
               </Link>
+              <div
+                className={
+                  !showHamburgerNav
+                    ? "nav-collection-dropdown"
+                    : "nav-collection-dropdown-hide"
+                }
+              >
+                <ul className="nav-collection-dropdown-ul">
+                  {collectionList.map((collection, i) => {
+                    return (
+                      <li key={collection.collectionName}>
+                        <Link
+                          // to={`/products/rugs/${collection.collectionName}`}
+                          //ROUTER LINK NOT REFRESHING!! CHANGE CODE
+                          onClick={() => {
+                            window.location.href = `/products/rugs/${collection.collectionName}`;
+                          }}
+                          // to={`/products/rugs/${collection.collectionName}`}
+                          id={"dropdown" + collection.collectionName}
+                        >
+                          <DropdownText
+                            text={
+                              collection.collectionName === "Founders"
+                                ? collection.collectionName + " Collection"
+                                : collection.collectionName
+                            }
+                          />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </li>
             <li className="nav-item">
               <Link
@@ -105,6 +150,17 @@ const NavigationBar = () => {
             <li className="nav-item">
               <Link
                 className="nav-link"
+                to="/communications"
+                onClick={() => {
+                  sethamburgerNavOpen(false);
+                }}
+              >
+                Communications
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
                 to="/about-us"
                 onClick={() => {
                   sethamburgerNavOpen(false);
@@ -113,7 +169,8 @@ const NavigationBar = () => {
                 About Us
               </Link>
             </li>
-            <li className="nav-item">
+
+            {/* <li className="nav-item">
               <a
                 className="nav-link"
                 href="#"
@@ -123,17 +180,17 @@ const NavigationBar = () => {
               >
                 Blog
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link"
-                href="#"
+                to="/contact"
                 onClick={() => {
                   sethamburgerNavOpen(false);
                 }}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -141,22 +198,5 @@ const NavigationBar = () => {
     </>
   );
 };
-
-// const navBar = document.querySelector(".nav-bar");
-// console.log("NAVBAR", navBar);
-
-// function scrollFunction() {
-//   if (
-//     document.body.scrollTop > 300 ||
-//     document.documentElement.scrollTop > 300
-//   ) {
-//     navBar.style.top = "20px";
-//     setTimeout(3000);
-//     navBar.classList.add("landing-navbar-active");
-//   } else {
-//     navBar.classList.remove("landing-navbar-active");
-//     document.querySelector(".nav-bar").style.top = "0";
-//   }
-// }
 
 export default NavigationBar;

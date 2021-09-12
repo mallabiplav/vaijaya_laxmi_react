@@ -19,7 +19,7 @@ const Collection = (props) => {
         </Link>
       ) : (
         <Link to={`/products/${collectionType}`}>
-          <button className="view-collection-button">{buttonLabel}</button>
+          <button className="view-collection-button">CG NEPAL</button>
         </Link>
       )}
     </div>

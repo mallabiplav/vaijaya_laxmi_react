@@ -6,9 +6,6 @@ const IndividualCollectionItem = (props) => {
   const collectionName = props.collectionName;
   const [showItem, setShowItem] = useState(false);
 
-  // const showInfo = () => {
-  //   console.log("Showingo");
-  // };
   return (
     <>
       <div

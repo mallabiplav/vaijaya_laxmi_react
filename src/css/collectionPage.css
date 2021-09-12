@@ -1,8 +1,9 @@
 .collectionSection {
   text-align: center;
-  margin: 12vh 1% 1%;
+  padding: 0% 0 2% 0;
   /* outline: 1px solid black; */
   /* outline-offset: 2em; */
+  overflow-x: hidden;
 }
 .collectionPageHeading {
   margin: 0.5em 0;
@@ -13,23 +14,9 @@
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   gap: 1em;
+  margin-top: 6.5em;
 }
-/* .collectionItem:nth-child(3n + 0) {
-  flex: 50%;
-} */
-/* .collectionItem:nth-child(odd) {
-  flex: 30%;
-} */
 
-/* .collectionWrapper > * {
-  flex: 30%;
-} */
-
-/* .collectionWrapper:first-child {
-  grid-column: 1/2;
-  margin-right: 30em;
-  color: green;
-} */
 a[id="Founders"] {
   grid-column: 1/3;
   grid-row: 2/3;
@@ -41,6 +28,10 @@ a[id="Founders"] {
   grid-row: 3/5;
   width: 100%;
 }
+#Runner {
+  grid-column: 1/3;
+  min-height: 25em;
+}
 
 .collectionItem {
   text-decoration: none;
@@ -51,7 +42,7 @@ a[id="Founders"] {
   align-items: center;
   color: white;
   min-height: 25em;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s linear;
 }
 
 .collectionItem:hover {

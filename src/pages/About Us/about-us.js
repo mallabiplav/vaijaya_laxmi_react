@@ -1,15 +1,15 @@
 import React from "react";
+import aboutUsMain from "../../images/about-us.jpg";
 import image from "../../images/Journey-of-your-rug.jpg";
-import foundersImage from "../../images/founders-image.JPEG";
-import AboutUsHeading from "./about-us-heading-component";
-import AboutUsSubheading from "./about-us-sub-heading-component";
-import Value from "./values-component";
+import thimiImage from "../../images/ceramics-project.jpg";
+import foundersImage from "../../images/Founders Photo.png";
 import "../../css/aboutUsPage.css";
 import ParagraphComponent from "../../components/text-components/paragraph-component";
 import H1 from "../../components/text-components/h1-component";
 import H2 from "../../components/text-components/h2-component";
 import H3 from "../../components/text-components/h3-component";
 import QuoteComponent from "./quote-component";
+import ValuesSection from "./values-component";
 
 const AboutUsPage = () => {
   return (
@@ -17,12 +17,15 @@ const AboutUsPage = () => {
       <div className="about-us-main">
         <H1 text="About Us" />
         <div className="about-us-image-container">
-          <img className="about-us-main-image" src={image} />
-        </div>
-        <div className="about-us-paragraph-container">
-          <ParagraphComponent
-            className="about-us-paragraph"
-            paragraph="Vijaya Laxmi is an organization that started with a simple thought of
+          <img
+            className="about-us-main-image"
+            src={aboutUsMain}
+            alt="about-us-main"
+          />
+          <div className="about-us-paragraph-container">
+            <ParagraphComponent
+              className="about-us-paragraph"
+              paragraph="Vijaya Laxmi is an organization that started with a simple thought of
           providing good products with good values. Producing quality highland
           crafts like hand-knotted rugs, ceramics, dhurries, dhaka fabrics,
           pashmina and so on. We are based in Kathmandu, the foothills of the
@@ -33,59 +36,25 @@ const AboutUsPage = () => {
           craftsmanship with a modern approach.
           
           "
-          />
-          <ParagraphComponent
-            className="about-us-paragraph"
-            paragraph="We believe in balancing our business priorities with a strong sense of
+            />
+            <ParagraphComponent
+              className="about-us-paragraph"
+              paragraph="We believe in balancing our business priorities with a strong sense of
           social responsibilities. We aim to promote and support local artisans
           and their crafts ethically, paving the way for centuries old techniques
           to be accessible to the world in an authentic way. Using the finest
           quality raw materials that go through the wonderful journey of turning
           into your product."
-          />
-          {/* <ParagraphComponent
+            />
+            {/* <ParagraphComponent
             paragraph="Our goal is to provide you with timeless pieces that complete
           your spaces.."
           /> */}
+          </div>
         </div>
       </div>
-
-      <section className="our-founders-section">
-        <div className="our-founders-introduction">
-          <H2 text="Our Founders" />
-          <ParagraphComponent
-            paragraph="Vijaya Laxmi Organization is led by its co-founders Rachana Shrestha,
-            Adhishree Shrestha and Tsering Kenji Sherpa, who formed the company in
-            2020."
-          />
-        </div>
-        <div className="founders-image-container">
-          <img
-            src={foundersImage}
-            alt="founders-image"
-            className="about-us-founders-image"
-          />
-        </div>
-        <div className="founders-info-container">
-          <div className="quote-container">
-            <QuoteComponent
-              text="We are a young team that isn’t afraid to think big and blur the
-            lines between modernity and tradition."
-            />
-          </div>
-          <div className="founders-paragaraph">
-            <ParagraphComponent
-              align="left-align"
-              paragraph=" Being an interior designer, Rachana Shrestha saw the need for
-            Nepalese artisanal products to evolve with the times while
-            maintaining its authenticity. She partnered with co-founders
-            Adhishree and Tsering who are leading the organization now. They
-            were raised in the bustling city of Kathmandu, and made their way to
-            Europe for their further studies and returned back to their roots
-            with a sense of calling ‘to make a difference’."
-            />
-          </div>
-        </div>
+      <section className="our-values-section">
+        <ValuesSection />
       </section>
       <section className="our-projects">
         <H2 text="Our Projects" />
@@ -113,15 +82,15 @@ const AboutUsPage = () => {
               project."
               />
             </div>
-            <img src={image} alt="sarlahi rug image" id="sarlahi-rug-image" />
+            <img src={image} alt="sarlahi rug" id="sarlahi-rug-image" />
           </div>
         </div>
         <div className="thimi-ceramics-container">
           <H3 className="left-align" text="Thimi Ceramic Project" />
           <div className="image-container">
             <img
-              src={image}
-              alt="thimi ceramics image"
+              src={thimiImage}
+              alt="thimi ceramics"
               id="thimi-ceramics-image"
             />
             <div className="thimi-ceramics-paragraph">
@@ -148,6 +117,46 @@ const AboutUsPage = () => {
                 align="right-align"
                 paragraph="By giving continuance to this artform, this project brings your
               ceramic products to life."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="our-founders-section">
+        <div className="our-founders-introduction">
+          <H2 text="Our Founders" />
+          <ParagraphComponent
+            paragraph="Vijaya Laxmi Organization is led by its co-founders Rachana Shrestha,
+            Adhishree Shrestha and Tsering Kenji Sherpa, who formed the company in
+            2020."
+          />
+        </div>
+        <div className="our-founders-main">
+          <div className="founders-image-container">
+            <img
+              src={foundersImage}
+              alt="founders"
+              className="about-us-founders-image"
+            />
+          </div>
+          <div className="founders-info-container">
+            <div className="quote-container">
+              <QuoteComponent
+                text="We are a young team that isn’t afraid to think big and blur the
+              lines between modernity and tradition."
+              />
+            </div>
+            <div className="founders-paragaraph">
+              <ParagraphComponent
+                align="left-align"
+                paragraph=" Being an interior designer, Rachana Shrestha saw the need for
+              Nepalese artisanal products to evolve with the times while
+              maintaining its authenticity. She partnered with co-founders
+              Adhishree and Tsering who are leading the organization now. They
+              were raised in the bustling city of Kathmandu, and made their way to
+              Europe for their further studies and returned back to their roots
+              with a sense of calling ‘to make a difference’."
               />
             </div>
           </div>

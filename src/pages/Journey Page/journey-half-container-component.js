@@ -7,7 +7,7 @@ const HalfContainer = ({ img: carding }) => {
     <div className="journey-rug-container journey-half-container carding-container">
       <H2 className="journey-rug-heading carding-heading" text="Carding" />
       <div className="journey-half-image-container">
-        <img src={carding} />
+        <img src={carding} alt="carding" />
       </div>
       <Paragraph
         className="journey-rug-paragraph carding-spinning-paragaraph"

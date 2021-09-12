@@ -1,5 +1,4 @@
 import React from "react";
-import JourneyHeading from "./journey-page-heading";
 import JourneyPageRugs from "./journey-page-rugs";
 import "../../css/journey.css";
 

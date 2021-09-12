@@ -10,9 +10,9 @@ const JourneySection = () => {
   return (
     <section className="journey">
       <div className="journey-header-container">
-        <img src={journeyImage} className="journey-image" />
+        <img src={journeyImage} className="journey-image" alt="journey" />
         <div className="journey-header">
-          <H2 text="The Journey Of Artisnal Crafts" />
+          <H2 text="The Journey Of Artisanal Crafts" />
         </div>
       </div>
       <div className="journey-content">

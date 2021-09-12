@@ -17,18 +17,20 @@ nav {
   flex-direction: row;
   z-index: 1000;
   width: 100%;
+  background-color: #ffffff;
   transition: background-color 500ms ease-in, opacity 800ms ease-in;
 }
 
 .nav-show {
   transform: translateY(0em);
-  opacity: 1;
+  /* opacity: 1; */
 }
 .nav-link {
   font-size: clamp(0.8rem, 0.9vw, 3rem);
 }
+
 .nav-item {
-  padding: 0.5em;
+  padding: 0.7em;
 }
 
 .nav-item a {
@@ -37,12 +39,41 @@ nav {
 }
 
 .nav-item a:hover {
-  color: rgb(233, 233, 233);
+  color: rgb(173, 175, 33);
+}
+.nav-collection-dropdown-hide {
+  display: none;
+}
+#nav-rugs {
+  position: relative;
 }
 
+.nav-collection-dropdown {
+  position: absolute;
+  left: -1em;
+  /* display: none; */
+}
+
+.nav-collection-dropdown-ul {
+  padding-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: max-content;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+#nav-rugs:hover .nav-collection-dropdown-ul {
+  max-height: 500px;
+}
+.nav-collection-dropdown-ul li {
+  margin: 1em 1.5em;
+}
 .hamburger-menu {
   position: fixed;
-  opacity: 70%;
+  /* opacity: 70%; */
   top: 6%;
   right: 5%;
   width: 2.3em;
@@ -128,7 +159,7 @@ nav {
     display: none;
   }
   .hamburger-menu {
-    opacity: 50%;
+    /* opacity: 50%; */
     top: 5%;
     right: 5%;
     width: 2em;

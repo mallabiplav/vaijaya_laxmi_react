@@ -5,6 +5,8 @@ import balling from "../../images/journey-images/journey-balling.JPG";
 import dyeing from "../../images/journey-images/journey-dyeing.jpg";
 import weaving from "../../images/journey-images/journey-weaving.JPG";
 import washing from "../../images/journey-images/journey-washing.JPG";
+import finishing from "../../images/journey-images/journey-finishing.JPG";
+import finishedProduct from "../../images/journey-images/journey-finished.png";
 import mainImage from "../../images/journey-images/journey-main-img.jpg";
 import H1 from "../../components/text-components/h1-component";
 import H2 from "../../components/text-components/h2-component";
@@ -15,7 +17,7 @@ import HalfContainer from "./journey-half-container-component";
 gsap.registerPlugin(ScrollTrigger);
 
 const JourneyPageRugs = () => {
-  const halfContainer = useRef(null);
+  // const halfContainer = useRef(null);
   const fullContainerRef1 = useRef(null);
   const fullContainerRef2 = useRef(null);
   const fullContainerRef3 = useRef(null);
@@ -32,7 +34,7 @@ const JourneyPageRugs = () => {
       .to(
         fullContainerImg,
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 5,
           css: { filter: "blur(10px) grayscale(100%)" },
         },
@@ -40,14 +42,14 @@ const JourneyPageRugs = () => {
       )
       .fromTo(
         fullContainerHeading,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
-        "-=.5"
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
+        "<"
       )
       .fromTo(
         fullContainerParagraph,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
         "<"
       );
 
@@ -57,7 +59,7 @@ const JourneyPageRugs = () => {
       animation: fullContainerAnimationTl,
       pin: true,
       start: "top top",
-      end: "+=100%",
+      end: "+=50%",
       // markers: true,
     });
   }, [fullContainerAnimationTl]);
@@ -71,7 +73,7 @@ const JourneyPageRugs = () => {
       .to(
         fullContainerImg,
         {
-          opacity: 1,
+          autoAlpha: 1,
           duration: 5,
           css: { filter: "blur(10px) grayscale(100%)" },
         },
@@ -79,14 +81,14 @@ const JourneyPageRugs = () => {
       )
       .fromTo(
         fullContainerHeading,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
-        "-=.5"
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
+        "<"
       )
       .fromTo(
         fullContainerParagraph,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
         "<"
       );
 
@@ -96,7 +98,7 @@ const JourneyPageRugs = () => {
       animation: fullContainerAnimationTl2,
       pin: true,
       start: "top top",
-      end: "+=100%",
+      end: "+=50%",
       // markers: true,
     });
   }, [fullContainerAnimationTl2]);
@@ -104,30 +106,39 @@ const JourneyPageRugs = () => {
   //WASHING AND FINISHING ANIMATION
 
   useEffect(() => {
-    const fullContainerImg = fullContainerRef3.current.children[0].children[0];
+    const fullContainerImg1 = fullContainerRef3.current.children[0].children[0];
+    const fullContainerImg2 = fullContainerRef3.current.children[0].children[1];
     const fullContainerHeading =
-      fullContainerRef3.current.children[0].children[1].firstElementChild;
+      fullContainerRef3.current.children[0].children[2].firstElementChild;
     const fullContainerParagraph = fullContainerHeading.nextElementSibling;
     fullContainerAnimationTl3
       .to(
-        fullContainerImg,
+        fullContainerImg2,
         {
-          opacity: 1,
-          duration: 5,
+          autoAlpha: 0,
+          duration: 30,
+        },
+        "+=1"
+      )
+      .to(
+        fullContainerImg1,
+        {
+          autoAlpha: 1,
+          duration: 10,
           css: { filter: "blur(10px) grayscale(100%)" },
         },
-        "+=.5"
+        "+=1"
       )
       .fromTo(
         fullContainerHeading,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
-        "-=.5"
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
+        "<"
       )
       .fromTo(
         fullContainerParagraph,
-        { opacity: 0, duration: 0.5 },
-        { opacity: 3, duration: 12 },
+        { autoAlpha: 0, duration: 0.5 },
+        { autoAlpha: 3, duration: 12 },
         "<"
       );
 
@@ -145,9 +156,13 @@ const JourneyPageRugs = () => {
   return (
     <div className="journey-rugs-container">
       <div className="journey-rug-container-main">
-        <H1 className="journey-rugs-heading" text="The Journey of your rug" />
+        <H1 className="journey-rugs-heading" text="The Journey of Your Rug" />
         <div className="journey-main-image-container">
-          <img className="journey-main-image" src={mainImage} />
+          <img
+            className="journey-main-image"
+            src={mainImage}
+            alt="journey-main"
+          />
         </div>
         <Paragraph
           className="journey-rugs-main-paragraph"
@@ -158,13 +173,13 @@ const JourneyPageRugs = () => {
           existed for hundreds of years."
         />
       </div>
-      <HalfContainer ref={halfContainer} img={carding} />
+      <HalfContainer img={carding} />
       <div
         ref={fullContainerRef1}
         className="journey-rug-container journey-full-container spinning-container"
       >
         <div className="spinning-info">
-          <img src={spinning} />
+          <img src={spinning} alt="spinning" />
           <div className="journey-full-info">
             <H2
               className="journey-rug-heading journey-full-heading spinning-heading"
@@ -184,7 +199,7 @@ const JourneyPageRugs = () => {
       <div className="journey-rug-container journey-half-container dyeing-container">
         <H2 className="journey-rug-heading dyeing-heading" text="Dyeing" />
         <div className="journey-half-image-container">
-          <img src={dyeing} />
+          <img src={dyeing} alt="dyeing" />
         </div>
         <Paragraph
           className="journey-rug-paragraph dyeing-paragaraph"
@@ -199,7 +214,7 @@ const JourneyPageRugs = () => {
         className="journey-rug-container journey-full-container balling-container"
       >
         <div className="balling-info">
-          <img src={balling} />
+          <img src={balling} alt="balling" />
           <div className="journey-full-info">
             <H2
               className="journey-rug-heading journey-full-heading balling-heading"
@@ -216,7 +231,7 @@ const JourneyPageRugs = () => {
       <div className="journey-rug-container journey-half-container weaving-container">
         <H2 className="journey-rug-heading weaving-heading" text="Weaving" />
         <div className="journey-half-image-container">
-          <img src={weaving} />
+          <img src={weaving} alt="weaving" />
         </div>
         <Paragraph
           className="journey-rug-paragraph weaving-paragaraph"
@@ -232,7 +247,8 @@ const JourneyPageRugs = () => {
         className="journey-rug-container journey-full-container washing-finishing-container"
       >
         <div className="washing-info">
-          <img src={washing} />
+          <img src={washing} alt="washing" />
+          <img src={finishing} alt="finishing" />
           <div className="journey-full-info">
             <H2
               className="journey-rug-heading journey-full-heading washing-finishing-heading"
@@ -243,11 +259,28 @@ const JourneyPageRugs = () => {
               paragraph="  Prior to washing, artisans put in their final touches to even out
             and trim the rug. Once this is done, the art of washing begins where
             every piece is rinsed, cleansed and groomed with utmost care, ready
-            to be shipped. Once shipped, the journey of our rug ends with us and
-            begins with you."
+            to be shipped."
             />
           </div>
         </div>
+      </div>
+      <div className="journey-rug-container journey-half-container finished-container">
+        <H2
+          className="journey-rug-heading finished-heading"
+          text="Finished Product"
+        />
+        <div className="journey-half-image-container">
+          <img
+            src={finishedProduct}
+            alt="finished product"
+            style={{ objectFit: "contain" }}
+          />
+        </div>
+        <Paragraph
+          className="journey-rug-paragraph finished-paragaraph"
+          paragraph="Once shipped, the journey of our rug ends with us and
+          begins with you."
+        />
       </div>
     </div>
   );

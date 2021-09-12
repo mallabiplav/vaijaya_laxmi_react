@@ -1,0 +1,33 @@
+.close-modal-box {
+  position: relative;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  height: 2.3em;
+  width: 2.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-modal-button::after,
+.close-modal-button::before {
+  content: "";
+  inset: 0;
+  margin: auto;
+  position: absolute;
+  width: 1.5em;
+  height: 0.25em;
+  background: rgb(255, 255, 255);
+}
+.close-modal-button::after {
+  content: "";
+  /* left: 0; */
+  /* right: 0; */
+
+  transform: rotate(45deg);
+  /* top: -0.5em; */
+}
+.close-modal-button::before {
+  /* top: 0.5em; */
+  transform: rotate(130deg);
+}

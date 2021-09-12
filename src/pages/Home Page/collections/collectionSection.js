@@ -1,8 +1,8 @@
 import React from "react";
 import Collections from "./collections";
-import outdoor from "../../../images/outdooor.jpg";
-import pangden from "../../../images/pangden.jpg";
-import indoor from "../../../images/indoor.jpg";
+import rugs from "../../../images/rugs-home-bg.jpg";
+import communications from "../../../images/communications-home-bg.jpg";
+import ceramics from "../../../images/ceramics-home-bg.jpg";
 
 const CollectionSection = () => {
   return (
@@ -15,20 +15,20 @@ const CollectionSection = () => {
         heading={"Rugs"}
         linkTo={"products/rugs"}
         buttonLabel={"View Collection"}
-        image={outdoor}
+        image={rugs}
       />
       <Collections
         heading={"Communications"}
-        linkTo={"#"}
+        linkTo={"communications"}
         buttonLabel={"Learn More"}
-        image={pangden}
+        image={communications}
       />
       <Collections
         id="ceramics"
         heading={"Ceramics"}
         linkTo={"#"}
         buttonLabel={"Coming Soon"}
-        image={indoor}
+        image={ceramics}
       />
     </section>
   );

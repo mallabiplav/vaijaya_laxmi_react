@@ -40,7 +40,7 @@ const FooterSection = () => {
 
         <ParagraphComponent
           className="footer-email"
-          paragraph="vijayalaxmiorganization@gmail.com"
+          paragraph="info@vijayalaxmi.org"
         />
         <ParagraphComponent
           className="footer-address"
